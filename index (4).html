@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Language" content="es" />
+  <title>Club Juntos MDQ — Discapacidad y Neurodivergencias · Mar del Plata</title>
+  <meta name="description" content="Club Juntos Mar del Plata. La verdadera discapacidad es el miedo a no intentarlo. Natacion, hidroterapia, deporte y arte. Trabajamos con tu obra social o prepaga." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','system-ui','sans-serif'] },
+          animation: {
+            marquee: 'marquee 30s linear infinite',
+            float: 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            marquee: { '0%':{ transform:'translateX(0%)' }, '100%':{ transform:'translateX(-50%)' } },
+            float: { '0%,100%':{ transform:'translateY(0px)' }, '50%':{ transform:'translateY(-8px)' } },
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    html { font-family:'Inter',system-ui,sans-serif; }
+    .marquee-track { display:flex; width:max-content; animation:marquee 30s linear infinite; }
+    .marquee-track:hover { animation-play-state:paused; }
+    .faq-content { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+    .faq-content.open { max-height:500px; }
+    .faq-icon { transition:transform 0.3s ease; }
+    .faq-icon.open { transform:rotate(45deg); }
+    .card-hover { transition:transform 0.25s ease, box-shadow 0.25s ease; }
+    .card-hover:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased overflow-x-hidden">
+
+<!-- ── HEADER ─────────────────────────────── -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <a href="#" class="flex items-center gap-2.5">
+        <img src="https://lh3.googleusercontent.com/d/1HVn1YW4JKuKJ2yjITTN-j2NgQUWddDKq" alt="Logo Club Juntos" class="w-16 h-16 object-contain" />
+        <div>
+          <p class="text-slate-900 font-black text-base leading-none">CLUB JUNTOS</p>
+          <p class="text-blue-600 text-[9px] font-semibold tracking-widest uppercase leading-none mt-0.5">Mar del Plata</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#actividades" class="hover:text-blue-600 transition-colors">Actividades</a>
+        <a href="#galeria" class="hover:text-blue-600 transition-colors">Galeria</a>
+        <a href="#equipo" class="hover:text-blue-600 transition-colors">Equipo</a>
+        <a href="#obras-sociales" class="hover:text-blue-600 transition-colors">Obras Sociales</a>
+        <a href="#faq" class="hover:text-blue-600 transition-colors">Preguntas</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/542236808522" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm px-4 py-2.5 rounded-xl transition-all shadow-md active:scale-95">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          Escribinos
+        </a>
+        <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-blue-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path id="icon-open" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="icon-close" class="hidden" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-6 py-4 flex flex-col gap-3 text-sm font-medium text-slate-700">
+    <a href="#actividades" class="py-1">Actividades</a>
+    <a href="#galeria" class="py-1">Galeria</a>
+    <a href="#equipo" class="py-1">Equipo</a>
+    <a href="#obras-sociales" class="py-1">Obras Sociales</a>
+    <a href="#faq" class="py-1">Preguntas</a>
+    <a href="https://wa.me/542236808522" target="_blank" class="inline-flex items-center justify-center bg-blue-600 text-white font-bold py-3 rounded-xl mt-1">Quiero inscribirme</a>
+  </div>
+</header>
+
+
+<!-- ── HERO ───────────────────────────────── -->
+<section class="min-h-screen bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 relative overflow-hidden flex items-center pt-16">
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute -top-20 -right-20 w-96 h-96 bg-yellow-400/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 -left-20 w-80 h-80 bg-blue-800/40 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 lg:py-24">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/15 border border-white/30 text-white text-xs font-bold px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Mar del Plata · Mas de 70 alumnos
+        </div>
+
+        <!-- Titulo principal -->
+        <h1 class="font-black text-white leading-tight mb-4">
+          <span class="text-5xl sm:text-6xl lg:text-7xl block tracking-tight">CLUB JUNTOS</span>
+          <span class="text-lg sm:text-xl lg:text-2xl font-semibold text-yellow-300 block mt-3 leading-snug italic">
+            "La verdadera discapacidad<br />es el miedo a no intentarlo."
+          </span>
+        </h1>
+
+        <p class="text-blue-100 text-lg leading-relaxed mb-8 max-w-xl mt-6">
+          Un espacio para personas con discapacidad y neurodivergencias. Natacion, hidroterapia, deporte y arte con un equipo profesional que cuida cada detalle. Desde 2022 en Mar del Plata.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-10">
+          <a href="https://wa.me/542236808522?text=Hola!%20Quiero%20inscribirme%20en%20Club%20Juntos" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-white font-black text-lg px-8 py-4 rounded-2xl shadow-xl transition-all active:scale-95">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            Quiero inscribirme
+          </a>
+          <a href="#actividades" class="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 text-white font-bold text-base px-6 py-4 rounded-2xl transition-all backdrop-blur-sm">
+            Ver actividades
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <span class="flex items-center gap-2 text-white/90 text-sm font-medium">
+            <svg class="w-5 h-5 text-yellow-300 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            Equipo profesional
+          </span>
+          <span class="flex items-center gap-2 text-white/90 text-sm font-medium">
+            <svg class="w-5 h-5 text-yellow-300 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            Actividades para todos
+          </span>
+          <span class="flex items-center gap-2 text-white/90 text-sm font-medium">
+            <svg class="w-5 h-5 text-yellow-300 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            Obras sociales
+          </span>
+        </div>
+      </div>
+
+      <!-- Fotos -->
+      <div class="relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/30" style="aspect-ratio:3/4;max-height:520px;">
+          <img src="https://lh3.googleusercontent.com/d/19UB_ug731M51G5TRPMikvdzk5hMAaO9C"
+               alt="Clase de natacion Club Juntos"
+               class="w-full h-full object-cover object-top"
+               onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1d4ed8,#2563eb)';" />
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/30 to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <div class="bg-white/95 backdrop-blur-sm rounded-2xl px-5 py-4 flex items-center gap-3 shadow-lg">
+              <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg>
+              </div>
+              <div>
+                <p class="text-slate-900 font-black text-sm leading-none">Hidroterapia y Natacion</p>
+                <p class="text-blue-600 text-xs font-semibold mt-0.5">Equipo interdisciplinario</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-40 h-40 rounded-2xl overflow-hidden shadow-xl hidden sm:block" style="border:3px solid white;">
+          <img src="https://lh3.googleusercontent.com/d/1jKUKChCK_E37JiHui7Z1Wg9i5ONKvZhL" alt="Alumna Club Juntos" class="w-full h-full object-cover object-top" onerror="this.style.display='none';" />
+        </div>
+        <div class="absolute -top-6 -right-6 w-36 h-36 rounded-2xl overflow-hidden shadow-xl hidden sm:block" style="border:3px solid white;">
+          <img src="https://lh3.googleusercontent.com/d/111wvo4cgo6808nFF3pH8tMG-Gp0ukLyz" alt="Alumno Club Juntos" class="w-full h-full object-cover object-top" onerror="this.style.display='none';" />
+        </div>
+        <div class="absolute top-4 left-4 bg-yellow-400 text-slate-900 font-black text-sm px-3 py-2 rounded-xl shadow-lg hidden sm:block animate-float">+70 alumnos!</div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-16 bg-white" style="clip-path:ellipse(55% 100% at 50% 100%);"></div>
+</section>
+
+
+<!-- ── ESTADISTICAS ────────────────────────── -->
+<section class="bg-white pt-4 pb-16">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="bg-blue-600 rounded-3xl p-8 shadow-2xl shadow-blue-500/20">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div><p class="text-yellow-300 font-black text-4xl lg:text-5xl mb-1">+70</p><p class="text-blue-100 text-sm font-semibold">Alumnos activos</p></div>
+        <div><p class="text-yellow-300 font-black text-4xl lg:text-5xl mb-1">+6</p><p class="text-blue-100 text-sm font-semibold">Actividades disponibles</p></div>
+        <div><p class="text-yellow-300 font-black text-4xl lg:text-5xl mb-1">2</p><p class="text-blue-100 text-sm font-semibold">Sedes en MdP</p></div>
+        <div><p class="text-yellow-300 font-black text-4xl lg:text-5xl mb-1">2022</p><p class="text-blue-100 text-sm font-semibold">Desde el año</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PILARES ─────────────────────────────── -->
+<section class="bg-slate-50 py-20 lg:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Por que elegirnos</p>
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-6">Sabemos lo que<br />necesita tu familia.</h2>
+    <p class="text-slate-600 text-lg max-w-2xl mx-auto mb-14 leading-relaxed">Encontrar un espacio donde todos son bienvenido/as, donde los profes los conozcan de verdad y donde cada clase sea un momento de alegria, avance y pertenencia.</p>
+
+    <div class="grid sm:grid-cols-3 gap-6 text-left">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover">
+        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="font-black text-slate-900 text-lg mb-2">Equipo profesional</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Kinesiologas y profes especializados supervisan cada actividad. Tu hijo/a siempre esta en buenas manos.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover">
+        <div class="w-12 h-12 bg-yellow-100 rounded-2xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-black text-slate-900 text-lg mb-2">Actividades para todos</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Cada propuesta esta adaptada, supervisada y pensada para el bienestar integral de cada alumno.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover">
+        <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        </div>
+        <h3 class="font-black text-slate-900 text-lg mb-2">Es solo transformacion</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">No es solo recreacion. Planificamos para el desarrollo motor, social y emocional de cada persona.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ── QUIÉNES SOMOS ────────────────────── -->
+<section class="bg-white py-20 lg:py-28 border-t border-slate-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Nuestra historia</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight mb-6">Quienes somos.</h2>
+        <div class="space-y-4 text-slate-600 text-base leading-relaxed">
+          <p>Club Juntos nació en <strong class="text-slate-900">2022 en Mar del Plata</strong>, con un objetivo claro: crear un espacio real para que las personas con discapacidad y neurodivergencias puedan desarrollarse en su autonomía.</p>
+          <p>Lo que empezó como una idea se convirtió en una <strong class="text-slate-900">comunidad de más de 70 alumnos</strong>, con un equipo interdisciplinario y programas que transforman vidas semana a semana.</p>
+          <p>Hoy somos mucho más que un club. Somos una red de contención, profesionalismo y alegría donde cada persona encuentra su lugar, al igual que sus familias.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 mt-8">
+          <div class="bg-blue-50 border border-blue-100 rounded-2xl px-5 py-3 text-center">
+            <p class="text-blue-600 font-black text-2xl">2022</p>
+            <p class="text-slate-500 text-xs font-semibold">Fundacion</p>
+          </div>
+          <div class="bg-blue-50 border border-blue-100 rounded-2xl px-5 py-3 text-center">
+            <p class="text-blue-600 font-black text-2xl">+70</p>
+            <p class="text-slate-500 text-xs font-semibold">Alumnos</p>
+          </div>
+          <div class="bg-blue-50 border border-blue-100 rounded-2xl px-5 py-3 text-center">
+            <p class="text-blue-600 font-black text-2xl">2</p>
+            <p class="text-slate-500 text-xs font-semibold">Sedes</p>
+          </div>
+          <div class="bg-blue-50 border border-blue-100 rounded-2xl px-5 py-3 text-center">
+            <p class="text-blue-600 font-black text-2xl">+6</p>
+            <p class="text-slate-500 text-xs font-semibold">Actividades</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl aspect-square max-w-md mx-auto">
+          <img src="https://lh3.googleusercontent.com/d/19UB_ug731M51G5TRPMikvdzk5hMAaO9C"
+               alt="Club Juntos Mar del Plata"
+               class="w-full h-full object-cover"
+               onerror="this.parentElement.style.background='#dbeafe';" />
+        </div>
+        <div class="absolute -bottom-5 -left-5 bg-blue-600 text-white rounded-2xl px-5 py-4 shadow-xl hidden sm:block">
+          <p class="font-black text-lg leading-none">Mar del Plata</p>
+          <p class="text-blue-200 text-xs font-semibold mt-1">Desde 2022</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ── ACTIVIDADES ────────────────────────── -->
+<section id="actividades" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Que hacemos</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-4">Actividades para todos,<br />adaptadas a cada uno.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Actividades Grupales -->
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-7 border border-blue-200 card-hover relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-200/40 rounded-full -translate-y-8 translate-x-8"></div>
+        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-blue-500/30">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="text-slate-900 font-black text-xl mb-2">Actividades Grupales</h3>
+        <p class="text-blue-600 text-xs font-bold uppercase tracking-widest mb-3">Club Kids · Club Recreativo · Club Joven · Club Adulto</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5">Deporte, arte, meriendas, pileta y amigos. Un espacio de encuentro, juego y pertenencia donde cada persona tiene su lugar y su grupo.</p>
+        <a href="https://wa.me/542236808522?text=Hola!%20Me%20interesan%20las%20Actividades%20Grupales" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-blue-600 font-bold text-sm hover:underline">Consultar →</a>
+      </div>
+
+      <!-- Natacion Individual -->
+      <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-3xl p-7 border border-indigo-200 card-hover relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-200/40 rounded-full -translate-y-8 translate-x-8"></div>
+        <div class="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-indigo-500/30">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12h20M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10"/></svg>
+        </div>
+        <h3 class="text-slate-900 font-black text-xl mb-2">Natacion Individual</h3>
+        <p class="text-indigo-600 text-xs font-bold uppercase tracking-widest mb-3">Clases personalizadas</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5">Brindamos clases personalizadas con profes de educacion fisica segun el nivel de apoyo que cada alumno necesita. Avanzamos a su ritmo.</p>
+        <a href="https://wa.me/542236808522?text=Hola!%20Me%20interesa%20la%20Natacion%20Individual" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-indigo-600 font-bold text-sm hover:underline">Consultar →</a>
+      </div>
+
+      <!-- Hidroterapia -->
+      <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-3xl p-7 border border-cyan-200 card-hover relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-200/40 rounded-full -translate-y-8 translate-x-8"></div>
+        <div class="w-14 h-14 bg-cyan-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-cyan-500/30">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg>
+        </div>
+        <h3 class="text-slate-900 font-black text-xl mb-2">Hidroterapia</h3>
+        <p class="text-cyan-600 text-xs font-bold uppercase tracking-widest mb-3">Terapia acuatica especializada</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5">Terapia realizada dentro del agua donde, a traves de diferentes tecnicas especializadas, se lleva a cabo la intervencion terapeutica de forma segura y personalizada.</p>
+        <a href="https://wa.me/542236808522?text=Hola!%20Me%20interesa%20la%20Hidroterapia" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-cyan-600 font-bold text-sm hover:underline">Consultar →</a>
+      </div>
+
+      <!-- Actividades en Terreno -->
+      <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-7 border border-green-200 card-hover relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-green-200/40 rounded-full -translate-y-8 translate-x-8"></div>
+        <div class="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-green-500/30">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="text-slate-900 font-black text-xl mb-2">Actividades en Terreno</h3>
+        <p class="text-green-600 text-xs font-bold uppercase tracking-widest mb-3">Atletismo · Futbol</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5">Practicamos atletismo y futbol en espacios al aire libre. Actividades que fortalecen el cuerpo, el trabajo en equipo y la confianza en uno mismo.</p>
+        <a href="https://wa.me/542236808522?text=Hola!%20Me%20interesan%20las%20Actividades%20en%20Terreno" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-green-600 font-bold text-sm hover:underline">Consultar →</a>
+      </div>
+
+      <!-- Actividades Artisticas -->
+      <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl p-7 border border-pink-200 card-hover relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-pink-200/40 rounded-full -translate-y-8 translate-x-8"></div>
+        <div class="w-14 h-14 bg-pink-500 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-pink-500/30">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        </div>
+        <h3 class="text-slate-900 font-black text-xl mb-2">Actividades Artisticas</h3>
+        <p class="text-pink-600 text-xs font-bold uppercase tracking-widest mb-3">Danza · Pintura · Dibujo · Ceramica</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5">Danza y expresion corporal, pintura, dibujo y ceramica. El arte como herramienta de comunicacion, creatividad y desarrollo personal.</p>
+        <a href="https://wa.me/542236808522?text=Hola!%20Me%20interesan%20las%20Actividades%20Artisticas" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-pink-600 font-bold text-sm hover:underline">Consultar →</a>
+      </div>
+
+      <!-- Colonia de Vacaciones -->
+      <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-3xl p-7 border border-yellow-200 card-hover relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-yellow-200/40 rounded-full -translate-y-8 translate-x-8"></div>
+        <div class="w-14 h-14 bg-yellow-500 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-yellow-500/30">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        </div>
+        <h3 class="text-slate-900 font-black text-xl mb-2">Colonia de Vacaciones</h3>
+        <p class="text-yellow-700 text-xs font-bold uppercase tracking-widest mb-3">Verano e Invierno</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5">Programa especial para las vacaciones escolares con actividades recreativas, deportivas y artisticas en un ambiente seguro y lleno de energia.</p>
+        <a href="https://wa.me/542236808522?text=Hola!%20Me%20interesa%20la%20Colonia%20de%20Vacaciones" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-yellow-700 font-bold text-sm hover:underline">Ver fechas →</a>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="https://wa.me/542236808522?text=Hola!%20Quiero%20saber%20mas%20sobre%20las%20actividades%20de%20Club%20Juntos" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-black text-lg px-10 py-4 rounded-2xl shadow-xl shadow-blue-500/25 transition-all active:scale-95">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ── ANTICIPACION ─────────────────────────────── -->
+<section class="bg-slate-900 py-32 lg:py-40">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 lg:mb-24">
+      <p class="text-blue-400 text-xs font-bold tracking-[0.25em] uppercase mb-6">Conoce nuestras instalaciones</p>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-8">
+        Espacios diseñados<br />para el bienestar.
+      </h2>
+      <p class="text-blue-200 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">Vestuarios modernos, piletas climatizadas y ambientes seguros pensados para que disfrutes cada momento en Club Juntos.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-20">
+      <!-- Vestuarios -->
+      <div class="rounded-3xl overflow-hidden shadow-2xl shadow-black/50 group cursor-pointer" style="min-height:450px;">
+        <img src="https://lh3.googleusercontent.com/d/1r95-U6PxyRFMah2oGvcjEYVA4o5k3yoE"
+             alt="Vestuarios Club Juntos"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+             style="min-height:450px;"
+             onerror="this.parentElement.style.background='linear-gradient(135deg,#1e293b,#334155)';" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+          <p class="text-white font-black text-3xl lg:text-4xl mb-2">Vestuarios</p>
+          <p class="text-blue-200 text-base">Espacios limpios y modernos para tu comodidad</p>
+        </div>
+      </div>
+
+      <!-- Pileta -->
+      <div class="rounded-3xl overflow-hidden shadow-2xl shadow-black/50 group cursor-pointer" style="min-height:450px;">
+        <img src="https://lh3.googleusercontent.com/d/19UB_ug731M51G5TRPMikvdzk5hMAaO9C"
+             alt="Pileta Club Juntos"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+             style="min-height:450px;"
+             onerror="this.parentElement.style.background='linear-gradient(135deg,#0369a1,#0284c7)';" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+          <p class="text-white font-black text-3xl lg:text-4xl mb-2">Pileta Climatizada</p>
+          <p class="text-blue-200 text-base">Agua temperada y segura para todos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="https://wa.me/542236808522?text=Hola!%20Quiero%20conocer%20las%20instalaciones%20de%20Club%20Juntos" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-black text-lg px-10 py-5 rounded-2xl shadow-xl transition-all active:scale-95">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        Agenda una visita
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── TESTIMONIOS ────────────────────────── -->
+<section class="bg-slate-50 py-20 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Lo que dicen las familias</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">Ellos ya son parte<br />de Club Juntos.</h2>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-3xl p-7 shadow-sm border border-slate-100 card-hover relative">
+        <div class="text-yellow-400 text-4xl font-black leading-none mb-4">"</div>
+        <p class="text-slate-700 text-sm leading-relaxed mb-6">Encontramos en Club Juntos lo que buscabamos hace anos. Mi hijo llega feliz, los profes lo conocen de verdad y nosotros como familia nos sentimos acompanados en todo momento.</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-black text-sm shrink-0">M</div>
+          <div>
+            <p class="text-slate-900 font-bold text-sm">Mama de Matias</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-600 rounded-3xl p-7 shadow-xl relative">
+        <div class="text-yellow-300 text-4xl font-black leading-none mb-4">"</div>
+        <p class="text-blue-50 text-sm leading-relaxed mb-6">La hidroterapia cambio todo para nuestra hija. En pocos meses vimos avances que no habiamos logrado en otro lado. El equipo es increible, se nota que lo hacen con pasion y amor.</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-blue-500">
+          <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-black text-sm shrink-0">C</div>
+          <div>
+            <p class="text-white font-bold text-sm">Papa de Camila</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-7 shadow-sm border border-slate-100 card-hover relative">
+        <div class="text-yellow-400 text-4xl font-black leading-none mb-4">"</div>
+        <p class="text-slate-700 text-sm leading-relaxed mb-6">Lo que mas me sorprendio fue la predisposicion del equipo desde el primer dia. Se tomaron el tiempo de conocer a mi hijo, sus tiempos y sus necesidades. Eso no se encuentra en cualquier lado.</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-black text-sm shrink-0">S</div>
+          <div>
+            <p class="text-slate-900 font-bold text-sm">Mama de Santiago</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ── GALERIA ─────────────────────────────── -->
+<section id="galeria" class="bg-slate-900 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-blue-400 text-xs font-bold tracking-[0.25em] uppercase mb-4">La vida en el club</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+        Esto es lo que pasa<br /><span class="text-yellow-300">en cada clase.</span>
+      </h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="col-span-2 row-span-2 rounded-3xl overflow-hidden bg-blue-800 shadow-2xl" style="min-height:320px;">
+        <img src="https://lh3.googleusercontent.com/d/1r95-U6PxyRFMah2oGvcjEYVA4o5k3yoE" alt="Clase de natacion Club Juntos" class="w-full h-full object-cover" style="min-height:320px;" onerror="this.style.display='none';" />
+      </div>
+      <div class="rounded-3xl overflow-hidden bg-blue-700 shadow-xl" style="min-height:155px;">
+        <img src="https://lh3.googleusercontent.com/d/19UB_ug731M51G5TRPMikvdzk5hMAaO9C" alt="Alumnos Club Juntos" class="w-full h-full object-cover" style="min-height:155px;" onerror="this.style.display='none';" />
+      </div>
+      <div class="rounded-3xl overflow-hidden bg-blue-800 shadow-xl" style="min-height:155px;">
+        <img src="https://lh3.googleusercontent.com/d/1Fw6N57jtJLgLo-JBBXsYkgABUvge0kI0" alt="Alumno natacion Club Juntos" class="w-full h-full object-cover" style="min-height:155px;" onerror="this.style.display='none';" />
+      </div>
+      <div class="rounded-3xl overflow-hidden bg-blue-700 shadow-xl" style="min-height:155px;">
+        <img src="https://lh3.googleusercontent.com/d/1jKUKChCK_E37JiHui7Z1Wg9i5ONKvZhL" alt="Alumna hidroterapia Club Juntos" class="w-full h-full object-cover" style="min-height:155px;" onerror="this.style.display='none';" />
+      </div>
+      <div class="bg-gradient-to-br from-pink-500 to-purple-600 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl" style="min-height:155px;">
+        <svg class="w-10 h-10 text-white mb-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        <p class="text-white font-black text-sm mb-1">+392 fotos</p>
+        <a href="https://www.instagram.com/clubjuntosmdq/" target="_blank" rel="noopener" class="text-pink-100 text-xs font-semibold hover:text-white">@clubjuntosmdq →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── NINO / FRASE ───────────────────────── -->
+<section class="bg-gradient-to-br from-yellow-400 to-orange-400 py-20 lg:py-28 overflow-hidden relative">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-yellow-300/30 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-orange-500/20 rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="text-center lg:text-left order-2 lg:order-1">
+        <h2 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
+          "La verdadera<br />discapacidad es<br />el miedo a<br /><span class="text-yellow-900">no intentarlo."</span>
+        </h2>
+        <div class="bg-white/30 backdrop-blur-sm rounded-2xl p-6 border border-white/40 text-left">
+          <p class="text-yellow-900 font-bold text-base leading-relaxed">En Club Juntos creemos que cada persona tiene un potencial unico. Nuestro trabajo es crear el espacio donde ese potencial pueda florecer, con alegria, con profesionales y con una comunidad que te acompaña.</p>
+          <p class="text-yellow-900/80 text-sm mt-3 font-semibold">— Nicolas Maidana, Presidente Club Juntos</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-center order-1 lg:order-2">
+        <div class="relative w-72 h-72 lg:w-96 lg:h-96">
+          <img src="https://lh3.googleusercontent.com/d/111wvo4cgo6808nFF3pH8tMG-Gp0ukLyz" alt="Club Juntos" class="w-full h-full object-contain drop-shadow-2xl" onerror="this.style.display='none';document.getElementById('nino-fb').style.display='flex';" />
+          <div id="nino-fb" class="w-full h-full bg-white/20 rounded-full items-center justify-center border-4 border-white/40 shadow-2xl hidden">
+            <div class="text-center"><div class="text-8xl mb-2">🐶</div><p class="text-white font-black text-xl">Club Juntos</p></div>
+          </div>
+          <div class="absolute -bottom-4 -right-4 bg-white rounded-2xl px-4 py-3 shadow-xl">
+            <p class="text-slate-900 font-black text-sm">Club Juntos</p>
+            <p class="text-blue-600 text-xs font-semibold">Bienvenidos!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── EQUIPO ──────────────────────────────── -->
+<section id="equipo" class="bg-white py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Nuestro equipo</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-4">Un equipo profesional<br />que los conoce de verdad.</h2>
+      <p class="text-slate-500 text-lg max-w-2xl mx-auto">No son solo profes y kinesiologos. Son un equipo interdisciplinario que planifica, adapta y acompaña cada proceso individual.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6 mb-6">
+      <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-7 border border-blue-100 shadow-sm card-hover">
+        <div class="flex items-center gap-4 mb-5">
+          
+          <div>
+            <p class="text-slate-900 font-black text-lg leading-tight">Lic. Sofia Michiello</p>
+            <p class="text-blue-600 text-xs font-bold uppercase tracking-wide mt-1">Coordinadora de Hidroterapia</p>
+          </div>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">Responsable del diseño y coordinacion de todos los programas de hidroterapia. Especializada en intervencion acuatica terapeutica y deporte adaptado.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-green-50 to-white rounded-3xl p-7 border border-green-100 shadow-sm card-hover">
+        <div class="flex items-center gap-4 mb-5">
+          
+          <div>
+            <p class="text-slate-900 font-black text-lg leading-tight">Celeste Echegaray</p>
+            <p class="text-green-600 text-xs font-bold uppercase tracking-wide mt-1">Coordinadora de Educacion Fisica</p>
+          </div>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">Coordinadora de todas las actividades de educacion fisica adaptada. Planifica y supervisa las propuestas deportivas y recreativas de cada programa.</p>
+      </div>
+    </div>
+
+    <!-- Staff placeholder -->
+    <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 text-center">
+      <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-3">Staff de Profes</p>
+      <p class="text-slate-900 font-black text-xl mb-2">Nuestro equipo completo</p>
+      <p class="text-slate-500 text-sm mb-6">Proximamente vas a poder conocer a cada uno de los profes que hacen posible Club Juntos.</p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <div class="w-16 h-16 bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-2xl">👤</div>
+        <div class="w-16 h-16 bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-2xl">👤</div>
+        <div class="w-16 h-16 bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-2xl">👤</div>
+        <div class="w-16 h-16 bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-2xl">👤</div>
+        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-400 text-sm font-bold">+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── OBRAS SOCIALES ──────────────────────── -->
+<section id="obras-sociales" class="bg-blue-600 py-20 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-white/20 border border-white/30 text-white text-xs font-bold px-4 py-2 rounded-full mb-6">
+        <svg class="w-4 h-4 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        Cobertura medica
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">Trabajamos con tu<br />obra social o prepaga.</h2>
+      <p class="text-blue-100 text-lg max-w-xl mx-auto">Gestionamos toda la cobertura con nuestro equipo administrativo y legal para que solo te preocupes por venir a la actividad.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 max-w-3xl mx-auto">
+        <div class="bg-white/15 border border-white/25 rounded-2xl p-5 text-center backdrop-blur-sm">
+          <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-slate-900 font-black text-sm">1</span>
+          </div>
+          <p class="text-white font-black text-base mb-1">Nos entregas los papeles</p>
+          <p class="text-blue-100 text-xs leading-relaxed">Documentacion necesaria para iniciar el tramite.</p>
+        </div>
+        <div class="bg-white/15 border border-white/25 rounded-2xl p-5 text-center backdrop-blur-sm relative">
+          <div class="hidden sm:block absolute -left-2 top-1/2 -translate-y-1/2 text-yellow-300 text-xl font-black">→</div>
+          <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-slate-900 font-black text-sm">2</span>
+          </div>
+          <p class="text-white font-black text-base mb-1">Completamos y entregamos</p>
+          <p class="text-blue-100 text-xs leading-relaxed">Nuestro equipo gestiona todo el proceso con tu obra social o prepaga.</p>
+        </div>
+        <div class="bg-white/15 border border-white/25 rounded-2xl p-5 text-center backdrop-blur-sm relative">
+          <div class="hidden sm:block absolute -left-2 top-1/2 -translate-y-1/2 text-yellow-300 text-xl font-black">→</div>
+          <div class="w-10 h-10 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-slate-900 font-black text-sm">3</span>
+          </div>
+          <p class="text-white font-black text-base mb-1">Empezas la actividad</p>
+          <p class="text-blue-100 text-xs leading-relaxed">Vos solo te preocupas por llegar. Nosotros nos encargamos del resto.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <p class="text-blue-200 text-sm mb-4">Cuando tu hijo/a ingresa al club nos encargamos de todo el proceso legal y tecnico con tu obra social o prepaga. Vos solo disfrutas la experiencia.</p>
+      <a href="https://wa.me/542236808522?text=Hola!%20Quiero%20saber%20si%20trabajan%20con%20mi%20obra%20social" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-white text-blue-600 font-black text-base px-8 py-4 rounded-2xl shadow-xl transition-all hover:bg-yellow-300 hover:text-slate-900 active:scale-95">
+        Consultar mi obra social o prepaga →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SERVICIOS ADICIONALES ──────────────── -->
+<section class="bg-slate-50 py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Mas que un club</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">Acompañamos a toda<br />la familia.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-3xl p-7 border border-slate-100 shadow-sm card-hover">
+        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="font-black text-slate-900 text-lg mb-3">Ciclos de Charla</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Organizamos ciclos de charlas informativas sobre discapacidad, neurodivergencias y crianza. Un espacio de aprendizaje y comunidad para las familias.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-7 border border-slate-100 shadow-sm card-hover">
+        <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3 class="font-black text-slate-900 text-lg mb-3">Acompañamiento a Familias</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Sabemos que el proceso no es solo del alumno, es de toda la familia. Ofrecemos contencion y orientacion para acompañarlos en cada etapa.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-7 border border-slate-100 shadow-sm card-hover">
+        <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="font-black text-slate-900 text-lg mb-3">Equipo Legal y Contable</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Contamos con equipo legal y de contaduria para poder ayudarlos en cada paso: gestion de pensiones, certificados, tramites y cobertura de obra social.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── 3 PASOS ─────────────────────────────── -->
+<section class="bg-white py-20 lg:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Como empezar</p>
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-3">Son solo 3 pasos.</h2>
+    <p class="text-slate-500 text-lg mb-14">Sin papelerio ni burocracia — te contactas, nos contas y empezamos.</p>
+
+    <div class="grid sm:grid-cols-3 gap-6 relative">
+      <div class="hidden sm:block absolute top-12 left-1/3 right-1/3 h-0.5 bg-blue-200 z-0"></div>
+
+      <div class="relative z-10">
+        <div class="w-24 h-24 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-5 shadow-xl shadow-blue-500/25">
+          <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 shadow-sm">
+          <span class="text-blue-600 font-black text-4xl block mb-2">1</span>
+          <h3 class="text-slate-900 font-black text-lg mb-2">Nos escribis</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Un mensaje por WhatsApp al 223 680-8522 contandonos sobre tu hijo/a y que actividad te interesa.</p>
+        </div>
+      </div>
+
+      <div class="relative z-10">
+        <div class="w-24 h-24 bg-yellow-400 rounded-3xl flex items-center justify-center mx-auto mb-5 shadow-xl shadow-yellow-400/30">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 shadow-sm">
+          <span class="text-yellow-500 font-black text-4xl block mb-2">2</span>
+          <h3 class="text-slate-900 font-black text-lg mb-2">Entrevista virtual o presencial</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Coordinamos una charla para conocer a tu familia y encontrar la actividad ideal. Sin compromiso.</p>
+        </div>
+      </div>
+
+      <div class="relative z-10">
+        <div class="w-24 h-24 bg-green-500 rounded-3xl flex items-center justify-center mx-auto mb-5 shadow-xl shadow-green-500/25">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 shadow-sm">
+          <span class="text-green-600 font-black text-4xl block mb-2">3</span>
+          <h3 class="text-slate-900 font-black text-lg mb-2">Empezas esta semana!</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Te asignamos el programa, el horario y el equipo. Tu hijo/a ya tiene su lugar en Club Juntos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <a href="https://wa.me/542236808522?text=Hola!%20Quiero%20empezar%20en%20Club%20Juntos" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white font-black text-xl px-10 py-5 rounded-2xl shadow-2xl shadow-green-500/30 transition-all active:scale-95">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        Escribinos por WhatsApp ahora
+      </a>
+      <p class="text-slate-400 text-sm mt-3">Respondemos en menos de 24 horas · 223 680-8522</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FAQ ────────────────────────────────── -->
+<section id="faq" class="bg-slate-50 py-20 lg:py-28">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14">
+      <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Preguntas frecuentes</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">Lo que mas nos<br />preguntan las familias.</h2>
+    </div>
+    <div class="space-y-3">
+
+      <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-blue-50 transition-colors" onclick="toggleFaq(this)">
+          <span class="font-bold text-slate-900 text-sm">Las actividades estan adaptadas para mi hijo/a?</span>
+          <svg class="faq-icon w-6 h-6 text-blue-600 shrink-0 bg-blue-100 rounded-full p-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-content px-6 pb-5">
+          <p class="text-slate-600 text-sm leading-relaxed">Si. Todas las actividades estan diseñadas y adaptadas por nuestro equipo profesional. Planificamos respetando los tiempos, capacidades y singularidades de cada neurodivergencia o condicion. <strong class="text-slate-800">Cada alumno tiene su propio plan.</strong></p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-blue-50 transition-colors" onclick="toggleFaq(this)">
+          <span class="font-bold text-slate-900 text-sm">Trabajan con mi obra social o prepaga?</span>
+          <svg class="faq-icon w-6 h-6 text-blue-600 shrink-0 bg-blue-100 rounded-full p-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-content px-6 pb-5">
+          <p class="text-slate-600 text-sm leading-relaxed">Si. Trabajamos con obras sociales y prepagas. Cuando tu hijo/a ingresa, <strong class="text-slate-800">nuestro equipo administrativo y legal gestiona todo el proceso</strong> para que la experiencia sea unica y sin tramites para la familia. <a href="https://wa.me/542236808522?text=Hola!%20Quiero%20saber%20si%20trabajan%20con%20mi%20obra%20social" target="_blank" rel="noopener" class="text-blue-600 font-semibold underline">Consulta si la tuya esta incluida →</a></p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-blue-50 transition-colors" onclick="toggleFaq(this)">
+          <span class="font-bold text-slate-900 text-sm">A partir de que edad pueden participar?</span>
+          <svg class="faq-icon w-6 h-6 text-blue-600 shrink-0 bg-blue-100 rounded-full p-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-content px-6 pb-5">
+          <p class="text-slate-600 text-sm leading-relaxed">Trabajamos con niños, adolescentes y adultos. Tenemos programas diferenciados segun la edad: <strong>Club Kids, Club Recreativo, Club Joven y Club Adulto</strong>. Escribinos y te orientamos sobre cual es la mejor opcion para tu familiar.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-blue-50 transition-colors" onclick="toggleFaq(this)">
+          <span class="font-bold text-slate-900 text-sm">Donde funcionan las actividades?</span>
+          <svg class="faq-icon w-6 h-6 text-blue-600 shrink-0 bg-blue-100 rounded-full p-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-content px-6 pb-5">
+          <p class="text-slate-600 text-sm leading-relaxed">Tenemos 2 puntos en Mar del Plata: el Natatorio en <strong>Av. Paso 2430</strong> para natacion e hidroterapia, y nuestra Oficina en <strong>9 de Julio 3382</strong> para consultas, inscripciones y reuniones.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-blue-50 transition-colors" onclick="toggleFaq(this)">
+          <span class="font-bold text-slate-900 text-sm">Mi hijo/a nunca nado, puede empezar desde cero?</span>
+          <svg class="faq-icon w-6 h-6 text-blue-600 shrink-0 bg-blue-100 rounded-full p-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-content px-6 pb-5">
+          <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Por supuesto.</strong> La mayoria de nuestros alumnos empezaron sin ninguna experiencia previa. Nuestro equipo acompaña desde el primer contacto con el agua, respetando los tiempos y generando confianza de forma progresiva y segura.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SEDES ──────────────────────────────── -->
+<section class="bg-slate-900 py-16 lg:py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-white font-black text-2xl lg:text-3xl mb-10">Encontranos en Mar del Plata</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+      <a href="https://maps.google.com/?q=Av+Paso+2430+Mar+del+Plata" target="_blank" rel="noopener"
+         class="group bg-blue-600 hover:bg-blue-500 rounded-2xl p-6 flex items-center gap-5 transition-all shadow-lg">
+        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center shrink-0">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <p class="text-white font-black text-lg">Natatorio</p>
+          <p class="text-blue-200 text-sm font-semibold">Av. Paso 2430, Mar del Plata</p>
+          <p class="text-blue-300 text-xs mt-1">Natacion · Hidroterapia · Programas acuaticos</p>
+        </div>
+        <svg class="w-5 h-5 text-blue-300 ml-auto shrink-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://maps.google.com/?q=9+de+Julio+3382+Mar+del+Plata" target="_blank" rel="noopener"
+         class="group bg-slate-800 hover:bg-slate-700 rounded-2xl p-6 flex items-center gap-5 transition-all shadow-lg border border-slate-700">
+        <div class="w-14 h-14 bg-slate-700 rounded-2xl flex items-center justify-center shrink-0">
+          <svg class="w-7 h-7 text-slate-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        </div>
+        <div>
+          <p class="text-white font-black text-lg">Oficina Comercial</p>
+          <p class="text-slate-400 text-sm font-semibold">9 de Julio 3382, Mar del Plata</p>
+          <p class="text-slate-500 text-xs mt-1">Consultas · Inscripciones · Reuniones de familias</p>
+        </div>
+        <svg class="w-5 h-5 text-slate-500 ml-auto shrink-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA FINAL ───────────────────────────── -->
+<section id="inscripcion" class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 py-24 lg:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl"></div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+    <div class="text-6xl mb-6">🏊</div>
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">Tu hijo/a merece<br />este espacio.</h2>
+    <p class="text-yellow-300 font-bold text-xl italic mb-6">"La verdadera discapacidad es el miedo a no intentarlo."</p>
+    <p class="text-blue-100 text-lg leading-relaxed mb-10 max-w-xl mx-auto">No esperes mas. Escribinos hoy y en menos de 24 horas te contamos todo lo que necesitas saber.</p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+      <a href="https://wa.me/542236808522?text=Hola!%20Vi%20la%20pagina%20de%20Club%20Juntos%20y%20quiero%20inscribirme" target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-white font-black text-xl px-10 py-5 rounded-2xl shadow-2xl transition-all active:scale-95">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        Quiero inscribirme
+      </a>
+      <a href="mailto:clubjuntosmdq@gmail.com" class="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-base px-8 py-5 rounded-2xl transition-all backdrop-blur-sm">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Escribir un email
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 text-blue-200 text-sm">
+      <span>223 680-8522</span>
+      <span>@clubjuntosmdq</span>
+      <span>clubjuntosmdq@gmail.com</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- REDES SOCIALES -->
+<!-- RESEÑAS GOOGLE -->
+<section class="bg-white py-16 border-t border-slate-100">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-3xl p-8 lg:p-12 border border-blue-100 text-center">
+      <div class="flex items-center justify-center gap-1 mb-5">
+        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Tu opinion nos ayuda a crecer</h2>
+      <p class="text-slate-500 text-base max-w-xl mx-auto mb-8">Si tu hijo/a es parte de Club Juntos, contanos tu experiencia en Google. Tu reseña ayuda a otras familias a encontrarnos y confiar en nosotros.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://www.google.com/maps?cid=11501255893252631111" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-blue-300 text-slate-800 font-black text-base px-8 py-4 rounded-2xl shadow-md transition-all hover:shadow-xl active:scale-95">
+          <svg class="w-6 h-6" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          Dejar mi reseña en Google
+        </a>
+        <a href="https://www.google.com/maps?cid=11501255893252631111" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors">
+          Ver todas las reseñas →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-16 border-t border-slate-100">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-slate-400 text-xs font-bold tracking-[0.25em] uppercase mb-4">Seguinos en redes</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-10">Sumate a nuestra comunidad</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+      <a href="https://www.instagram.com/clubjuntosmdq/" target="_blank" rel="noopener"
+         class="group flex flex-col items-center gap-4 bg-gradient-to-br from-pink-50 to-purple-50 border border-pink-100 rounded-3xl p-7 hover:shadow-xl hover:shadow-pink-100 transition-all hover:-translate-y-1">
+        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-pink-500/30">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+        <div>
+          <p class="text-slate-900 font-black text-lg">Instagram</p>
+          <p class="text-pink-500 font-semibold text-sm">@clubjuntosmdq</p>
+          <p class="text-slate-400 text-xs mt-1">Fotos y videos del dia a dia</p>
+        </div>
+        <span class="inline-flex items-center gap-1 bg-pink-500 text-white text-xs font-bold px-4 py-2 rounded-full group-hover:bg-pink-600 transition-colors">
+          Seguir en Instagram →
+        </span>
+      </a>
+
+      <a href="https://www.facebook.com/ClubJuntosmdq" target="_blank" rel="noopener"
+         class="group flex flex-col items-center gap-4 bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-100 rounded-3xl p-7 hover:shadow-xl hover:shadow-blue-100 transition-all hover:-translate-y-1">
+        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </div>
+        <div>
+          <p class="text-slate-900 font-black text-lg">Facebook</p>
+          <p class="text-blue-600 font-semibold text-sm">Club Juntos MDQ</p>
+          <p class="text-slate-400 text-xs mt-1">Novedades y eventos</p>
+        </div>
+        <span class="inline-flex items-center gap-1 bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-full group-hover:bg-blue-700 transition-colors">
+          Seguir en Facebook →
+        </span>
+      </a>
+
+      <a href="https://www.youtube.com/@ClubJuntos" target="_blank" rel="noopener"
+         class="group flex flex-col items-center gap-4 bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 rounded-3xl p-7 hover:shadow-xl hover:shadow-red-100 transition-all hover:-translate-y-1">
+        <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/30">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div>
+          <p class="text-slate-900 font-black text-lg">YouTube</p>
+          <p class="text-red-600 font-semibold text-sm">@ClubJuntos</p>
+          <p class="text-slate-400 text-xs mt-1">Videos de actividades</p>
+        </div>
+        <span class="inline-flex items-center gap-1 bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-full group-hover:bg-red-700 transition-colors">
+          Ver canal de YouTube →
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── NOTICIAS Y ARTICULOS ──────────────── -->
+<section id="noticias" class="bg-white py-20 lg:py-28 border-t border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+      <div>
+        <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Actualidad</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">Noticias y Articulos.<br /><span class="text-blue-600">Contenido nuevo cada semana.</span></h2>
+      </div>
+      <a href="https://www.instagram.com/clubjuntosmdq/" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-bold text-sm border border-blue-200 hover:border-blue-400 px-5 py-2.5 rounded-xl transition-all shrink-0">
+        Ver todos en Instagram →
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Articulo 1 -->
+      <article class="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-16 h-16 text-blue-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Proximamente</div>
+        </div>
+        <div class="p-6">
+          <p class="text-blue-600 text-xs font-bold uppercase tracking-widest mb-2">Hidroterapia</p>
+          <h3 class="text-slate-900 font-black text-lg leading-tight mb-3">Los beneficios del agua en el desarrollo motor de personas con discapacidad</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-5">Descubri como la terapia acuatica mejora la motricidad, el tono muscular y el bienestar emocional de cada participante...</p>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-xs">Club Juntos · 2026</span>
+            <span class="text-blue-600 text-sm font-semibold">Proximamente →</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Articulo 2 -->
+      <article class="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="h-48 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-16 h-16 text-green-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <div class="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">Proximamente</div>
+        </div>
+        <div class="p-6">
+          <p class="text-green-600 text-xs font-bold uppercase tracking-widest mb-2">Inclusion</p>
+          <h3 class="text-slate-900 font-black text-lg leading-tight mb-3">Como el deporte potencia la autonomia en jovenes con neurodivergencias</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-5">El deporte adaptado como herramienta de desarrollo personal, social y emocional para adolescentes y jovenes...</p>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-xs">Club Juntos · 2026</span>
+            <span class="text-green-600 text-sm font-semibold">Proximamente →</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Articulo 3 -->
+      <article class="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="h-48 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-16 h-16 text-purple-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <div class="absolute top-3 left-3 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Proximamente</div>
+        </div>
+        <div class="p-6">
+          <p class="text-purple-600 text-xs font-bold uppercase tracking-widest mb-2">Familias</p>
+          <h3 class="text-slate-900 font-black text-lg leading-tight mb-3">Guia para familias: como acompañar el proceso de inclusion desde el hogar</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-5">Consejos practicos, herramientas y recursos para que las familias sean parte activa del desarrollo de sus hijos...</p>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-xs">Club Juntos · 2026</span>
+            <span class="text-purple-600 text-sm font-semibold">Proximamente →</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Banner suscripcion -->
+    <div class="mt-12 bg-slate-900 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="text-white font-black text-xl mb-1">Contenido nuevo cada semana.</p>
+        <p class="text-slate-400 text-sm">Seguinos en Instagram para no perderte ningun articulo ni novedad del club.</p>
+      </div>
+      <a href="https://www.instagram.com/clubjuntosmdq/" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-400 hover:to-purple-500 text-white font-bold px-7 py-3.5 rounded-2xl transition-all shadow-lg shrink-0 active:scale-95">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Seguir @clubjuntosmdq
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ── MARCAS ─────────────────────────────── -->
+<section class="bg-slate-50 py-16 lg:py-20 border-t border-slate-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Alianzas</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-10">Marcas que nos acompanan.</h2>
+    <div class="flex flex-wrap justify-center items-center gap-8">
+      <div class="group relative">
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center gap-3 w-44">
+          <img src="https://lh3.googleusercontent.com/d/1uFrpBA9jmQ7VaFWaqeYkTtAybxCA0NzO"
+               alt="Ecoparty"
+               class="h-20 object-contain"
+               onerror="this.style.display='none';" />
+          <p class="text-slate-700 font-bold text-sm">Ecoparty</p>
+        </div>
+      </div>
+      <!-- Placeholder para mas marcas -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-dashed border-slate-300 flex flex-col items-center justify-center gap-2 w-44 h-36">
+        <p class="text-slate-300 text-3xl">+</p>
+        <p class="text-slate-400 text-xs font-semibold text-center">Tu marca aqui</p>
+      </div>
+    </div>
+    <p class="text-slate-400 text-sm mt-8">Sumate como marca aliada — <a href="https://wa.me/542236808522?text=Hola!%20Quiero%20ser%20marca%20aliada%20de%20Club%20Juntos" target="_blank" rel="noopener" class="text-blue-600 font-semibold hover:underline">escribinos</a></p>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────── -->
+<footer class="bg-slate-950 border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-3 gap-8 mb-10">
+      <div>
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="https://lh3.googleusercontent.com/d/1HVn1YW4JKuKJ2yjITTN-j2NgQUWddDKq" alt="Logo Club Juntos" class="w-16 h-16 object-contain" />
+          <div>
+            <p class="text-white font-black text-base">CLUB JUNTOS</p>
+            <p class="text-slate-500 text-xs tracking-widest uppercase">Mar del Plata · Desde 2022</p>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed max-w-xs mb-4">"La verdadera discapacidad es el miedo a no intentarlo." Un club para personas con discapacidad y neurodivergencias.</p>
+        <div class="flex gap-3">
+          <a href="https://www.instagram.com/clubjuntosmdq/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/542236808522" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-green-400 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/ClubJuntosmdq" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-blue-400 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@ClubJuntos" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-red-500 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="text-slate-300 font-bold text-xs uppercase tracking-widest mb-4">Actividades</p>
+        <ul class="space-y-2">
+          <li><a href="#actividades" class="text-slate-400 hover:text-white text-sm transition-colors">Actividades Grupales</a></li>
+          <li><a href="#actividades" class="text-slate-400 hover:text-white text-sm transition-colors">Natacion Individual</a></li>
+          <li><a href="#actividades" class="text-slate-400 hover:text-white text-sm transition-colors">Hidroterapia</a></li>
+          <li><a href="#actividades" class="text-slate-400 hover:text-white text-sm transition-colors">Actividades en Terreno</a></li>
+          <li><a href="#actividades" class="text-slate-400 hover:text-white text-sm transition-colors">Actividades Artisticas</a></li>
+          <li><a href="#actividades" class="text-slate-400 hover:text-white text-sm transition-colors">Colonia de Vacaciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-slate-300 font-bold text-xs uppercase tracking-widest mb-4">Contacto</p>
+        <ul class="space-y-3">
+          <li><p class="text-slate-500 text-[10px] uppercase tracking-widest mb-0.5">WhatsApp</p><a href="https://wa.me/542236808522" target="_blank" class="text-white text-sm font-semibold hover:text-green-400 transition-colors">223 680-8522</a></li>
+          <li><p class="text-slate-500 text-[10px] uppercase tracking-widest mb-0.5">Email</p><a href="mailto:clubjuntosmdq@gmail.com" class="text-white text-sm font-semibold hover:text-blue-400 transition-colors break-all">clubjuntosmdq@gmail.com</a></li>
+          <li><p class="text-slate-500 text-[10px] uppercase tracking-widest mb-0.5">Natatorio</p><p class="text-white text-sm font-semibold">Av. Paso 2430, MdP</p></li>
+          <li><p class="text-slate-500 text-[10px] uppercase tracking-widest mb-0.5">Oficina</p><p class="text-white text-sm font-semibold">9 de Julio 3382, MdP</p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800 pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-slate-600 text-xs">© 2026 Club Juntos Mar del Plata Asoc. Civil. Todos los derechos reservados.</p>
+      <p class="text-slate-600 text-xs">Fundado en 2022 · Presidente: Nicolas Alberto Maidana</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- WhatsApp flotante -->
+<style>
+  @keyframes wiggle { 0%,100%{transform:rotate(-5deg) scale(1.05)} 50%{transform:rotate(5deg) scale(1.05)} }
+  .wa-float:hover .wa-icon { animation: wiggle 0.4s ease; }
+  @keyframes ping-slow { 0%{transform:scale(1);opacity:0.8} 100%{transform:scale(1.6);opacity:0} }
+  .wa-ping { animation: ping-slow 1.8s ease-out infinite; }
+</style>
+<a href="https://wa.me/542236808522?text=Hola!%20Vi%20la%20pagina%20de%20Club%20Juntos%20y%20quiero%20mas%20informacion"
+   target="_blank" rel="noopener"
+   class="wa-float fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-sm pl-4 pr-5 py-3 rounded-full shadow-2xl shadow-green-500/40 transition-all hover:shadow-green-500/60 active:scale-95">
+  <div class="relative shrink-0">
+    <div class="wa-ping absolute inset-0 rounded-full bg-green-400"></div>
+    <svg class="wa-icon w-7 h-7 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+  </div>
+  <span class="hidden sm:block">Escribinos!</span>
+</a>
+
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  let open = false;
+  menuBtn.addEventListener('click', () => {
+    open = !open;
+    mobileNav.classList.toggle('hidden', !open);
+    iconOpen.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    open = false; mobileNav.classList.add('hidden');
+    iconOpen.classList.remove('hidden'); iconClose.classList.add('hidden');
+  }));
+
+  function toggleFaq(trigger) {
+    const item = trigger.closest('.faq-item');
+    const content = item.querySelector('.faq-content');
+    const icon = trigger.querySelector('.faq-icon');
+    const isOpen = content.classList.contains('open');
+    document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+    if (!isOpen) { content.classList.add('open'); icon.classList.add('open'); }
+  }
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('shadow-md', window.scrollY > 20);
+  });
+</script>
+</body>
+</html>
