@@ -35,6 +35,17 @@
     .faq-icon.open { transform:rotate(45deg); }
     .card-hover { transition:transform 0.25s ease, box-shadow 0.25s ease; }
     .card-hover:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,0.1); }
+
+    /* Navegación y mejoras premium Club Juntos 2027 */
+    .cj-submenu{position:absolute;top:100%;left:0;min-width:210px;display:none;flex-direction:column;background:#fff;border:1px solid #e2e8f0;border-radius:14px;box-shadow:0 16px 38px #0e2c572b;padding:10px;z-index:70;max-height:70vh;overflow:auto}
+    .cj-submenu-wide{min-width:245px}
+    .cj-submenu a{display:block;padding:10px 12px;border-radius:9px;font-size:13px;color:#334155;white-space:nowrap}
+    .cj-submenu a:hover,.cj-submenu a:focus-visible{background:#eff6ff;color:#1d4ed8}
+    .group:hover>.cj-submenu,.group:focus-within>.cj-submenu{display:flex}
+    .cj-feature{transition:transform .2s ease,box-shadow .2s ease}
+    .cj-feature:hover{transform:translateY(-4px);box-shadow:0 16px 30px #0f274020}
+    :focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body class="bg-white text-slate-800 antialiased overflow-x-hidden">
@@ -52,13 +63,14 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-        <a href="#actividades" class="hover:text-blue-600 transition-colors">Actividades</a>
-        <a href="#galeria" class="hover:text-blue-600 transition-colors">Galeria</a>
-        <a href="#equipo" class="hover:text-blue-600 transition-colors">Equipo</a>
-        <a href="#obras-sociales" class="hover:text-blue-600 transition-colors">Obras Sociales</a>
-        <a href="#faq" class="hover:text-blue-600 transition-colors">Preguntas</a>
-      </nav>
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold text-slate-700" aria-label="Navegación principal">
+  <div class="relative group"><a href="#nosotros" class="px-2 py-3 inline-block hover:text-blue-700">Nosotros ▾</a><div class="cj-submenu"><a href="#nosotros">Nuestra historia</a><a href="#equipo">Equipo profesional</a><a href="#donaciones">Donaciones</a></div></div>
+  <div class="relative group"><a href="#actividades" class="px-2 py-3 inline-block hover:text-blue-700">Actividades ▾</a><div class="cj-submenu cj-submenu-wide"><a href="actividades/club-kids.html">Club Kids</a><a href="actividades/club-recreativo.html">Club Recreativo</a><a href="actividades/club-joven.html">Club Joven</a><a href="actividades/club-del-juego.html">Club del Juego</a><a href="actividades/natacion-individual.html">Natación individual</a><a href="actividades/hidroterapia.html">Hidroterapia</a><a href="actividades/teatro.html">Teatro</a><a href="actividades/danza-expresion-corporal.html">Danza y expresión corporal</a><a href="actividades/colonia-de-vacaciones.html">Colonia de vacaciones</a></div></div>
+  <div class="relative group"><a href="#convenios" class="px-2 py-3 inline-block hover:text-blue-700">Beneficios ▾</a><div class="cj-submenu"><a href="#convenios">Convenios</a><a href="#promociones">Promociones</a><a href="#obras-sociales">Obras Sociales</a><a href="club-de-descuentos.html">Club de Descuentos</a></div></div>
+  <div class="relative group"><a href="#familias" class="px-2 py-3 inline-block hover:text-blue-700">Familias ▾</a><div class="cj-submenu"><a href="#faq">Preguntas frecuentes</a><a href="#familias">Familias</a><a href="#noticias">Biblioteca y noticias</a></div></div>
+  <a href="#juntos-tv" class="px-2 py-3 hover:text-blue-700">Juntos TV</a>
+  <a href="#contacto" class="px-2 py-3 hover:text-blue-700">Contacto</a>
+</nav>
 
       <div class="flex items-center gap-2">
         <a href="https://wa.me/542236808522" target="_blank" rel="noopener"
@@ -66,7 +78,7 @@
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.842L.057 23.428a.75.75 0 00.914.914l5.587-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.98-1.37l-.357-.214-3.716.967.987-3.607-.232-.371A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
           Escribinos
         </a>
-        <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-blue-600">
+        <button id="menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-blue-600">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path id="icon-open" d="M4 6h16M4 12h16M4 18h16"/>
             <path id="icon-close" class="hidden" d="M6 18L18 6M6 6l12 12"/>
@@ -75,14 +87,21 @@
       </div>
     </div>
   </div>
-  <div id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-6 py-4 flex flex-col gap-3 text-sm font-medium text-slate-700">
-    <a href="#actividades" class="py-1">Actividades</a>
-    <a href="#galeria" class="py-1">Galeria</a>
-    <a href="#equipo" class="py-1">Equipo</a>
-    <a href="#obras-sociales" class="py-1">Obras Sociales</a>
-    <a href="#faq" class="py-1">Preguntas</a>
-    <a href="https://wa.me/542236808522" target="_blank" class="inline-flex items-center justify-center bg-blue-600 text-white font-bold py-3 rounded-xl mt-1">Quiero inscribirme</a>
-  </div>
+  <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-100 bg-white px-6 py-4 flex flex-col gap-2 text-sm font-semibold text-slate-700 max-h-[75vh] overflow-y-auto" aria-label="Menú móvil">
+<a href="#nosotros" class="py-2 border-b border-slate-100">Nosotros</a>
+<a href="#actividades" class="py-2 border-b border-slate-100">Actividades</a>
+<a href="#equipo" class="py-2 border-b border-slate-100">Equipo profesional</a>
+<a href="#convenios" class="py-2 border-b border-slate-100">Convenios</a>
+<a href="#promociones" class="py-2 border-b border-slate-100">Promociones</a>
+<a href="#obras-sociales" class="py-2 border-b border-slate-100">Obras Sociales</a>
+<a href="club-de-descuentos.html" class="py-2 border-b border-slate-100">Club de Descuentos</a>
+<a href="#donaciones" class="py-2 border-b border-slate-100">Donaciones</a>
+<a href="#familias" class="py-2 border-b border-slate-100">Familias</a>
+<a href="#noticias" class="py-2 border-b border-slate-100">Noticias</a>
+<a href="#juntos-tv" class="py-2 border-b border-slate-100">Club Juntos TV</a>
+<a href="#contacto" class="py-2 border-b border-slate-100">Contacto</a>
+<a href="https://wa.me/542236808522" class="inline-flex justify-center bg-blue-600 text-white font-bold py-3 rounded-xl mt-2">Consultar por WhatsApp</a>
+</div>
 </header>
 
 
@@ -280,7 +299,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
       <p class="text-blue-600 text-xs font-bold tracking-[0.25em] uppercase mb-4">Que hacemos</p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-4">Actividades para todos,<br />adaptadas a cada uno.</h2>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-4">Actividades para compartir,<br />crecer y disfrutar.</h2>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -292,7 +311,7 @@
           <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
         <h3 class="text-slate-900 font-black text-xl mb-2">Actividades Grupales</h3>
-        <p class="text-blue-600 text-xs font-bold uppercase tracking-widest mb-3">Club Kids · Club Recreativo · Club Joven · Club Adulto</p>
+        <p class="text-blue-600 text-xs font-bold uppercase tracking-widest mb-3">Club Kids · Club Recreativo · Club Joven · Club del Juego</p>
         <p class="text-slate-600 text-sm leading-relaxed mb-5">Deporte, arte, meriendas, pileta y amigos. Un espacio de encuentro, juego y pertenencia donde cada persona tiene su lugar y su grupo.</p>
         <a href="https://wa.me/542236808522?text=Hola!%20Me%20interesan%20las%20Actividades%20Grupales" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-blue-600 font-bold text-sm hover:underline">Consultar →</a>
       </div>
@@ -1075,6 +1094,18 @@
     <p class="text-slate-400 text-sm mt-8">Sumate como marca aliada — <a href="https://wa.me/542236808522?text=Hola!%20Quiero%20ser%20marca%20aliada%20de%20Club%20Juntos" target="_blank" rel="noopener" class="text-blue-600 font-semibold hover:underline">escribinos</a></p>
   </div>
 </section>
+
+<!-- CLUB JUNTOS 2027: NUEVAS SECCIONES, sin modificar contenido original -->
+<section id="nosotros" class="bg-white border-t border-slate-100 py-16 scroll-mt-20">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-blue-600 text-xs font-extrabold uppercase tracking-widest">Conocé Club Juntos</p><h2 class="text-3xl sm:text-4xl font-black mt-3 mb-5">Un espacio para encontrarnos.</h2><p class="text-slate-600 leading-relaxed max-w-3xl">Desde 2022, en Mar del Plata, desarrollamos propuestas deportivas, recreativas y culturales para personas con discapacidad y neurodivergencias.</p><a href="#equipo" class="inline-block mt-6 font-bold text-blue-700 hover:underline">Conocé a nuestro equipo →</a></div></section>
+<section id="convenios" class="bg-slate-50 border-t border-slate-200 py-20 scroll-mt-20">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-blue-600 text-xs font-extrabold uppercase tracking-widest">Alianzas institucionales</p><h2 class="text-3xl sm:text-4xl font-black mt-3">Convenios y colaboraciones</h2><p class="mt-4 text-slate-600 leading-relaxed max-w-3xl">Nos vinculamos con instituciones educativas, deportivas, empresas, organizaciones sociales, espacios de salud y organismos públicos. Publicaremos aquí solamente los acuerdos vigentes que estén confirmados.</p><div class="mt-7 rounded-2xl bg-white border border-slate-200 p-7"><h3 class="font-black text-xl">¿Tu institución quiere trabajar con el club?</h3><p class="text-slate-600 text-sm mt-2">Recibimos propuestas de convenios y proyectos conjuntos.</p><a class="inline-flex mt-5 rounded-xl bg-blue-700 text-white font-bold px-6 py-3 hover:bg-blue-800" target="_blank" rel="noopener" href="https://wa.me/542236808522?text=Hola%2C%20quiero%20proponer%20un%20convenio%20institucional%20con%20Club%20Juntos.">Proponer un convenio →</a></div></div></section>
+<section id="promociones" class="bg-white py-16 scroll-mt-20"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-blue-600 text-xs font-extrabold uppercase tracking-widest">Oportunidades</p><h2 class="text-3xl sm:text-4xl font-black mt-3">Promociones vigentes</h2><div class="bg-blue-50 border border-blue-100 rounded-2xl p-7 mt-7"><h3 class="font-bold text-lg">Próximamente, novedades</h3><p class="text-slate-600 text-sm mt-2">En este espacio aparecerán únicamente promociones confirmadas, con sus condiciones y fecha de vencimiento. No se publican tarifas generales.</p></div></div></section>
+<section id="descuentos" class="bg-gradient-to-br from-blue-800 via-blue-700 to-blue-600 text-white py-20 scroll-mt-20"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center"><div><p class="text-yellow-300 text-xs font-extrabold uppercase tracking-widest">Para alumnos y sus familias</p><h2 class="text-3xl sm:text-4xl font-black mt-3">Club de Descuentos</h2><p class="text-blue-100 mt-4 leading-relaxed">Credenciales digitales y físicas, validación visual y un catálogo de comercios adheridos que iremos incorporando con acuerdos confirmados.</p><a class="inline-flex mt-7 bg-yellow-400 text-slate-900 rounded-xl px-6 py-3 font-extrabold hover:bg-yellow-300" href="club-de-descuentos.html">Conocer el programa →</a></div><div class="grid grid-cols-2 gap-3"><div class="bg-white/10 border border-white/20 rounded-xl p-4 text-sm font-bold">Gastronomía</div><div class="bg-white/10 border border-white/20 rounded-xl p-4 text-sm font-bold">Indumentaria</div><div class="bg-white/10 border border-white/20 rounded-xl p-4 text-sm font-bold">Deporte y recreación</div><div class="bg-white/10 border border-white/20 rounded-xl p-4 text-sm font-bold">Salud y servicios</div><div class="bg-white/10 border border-white/20 rounded-xl p-4 text-sm font-bold">Educación</div><div class="bg-white/10 border border-white/20 rounded-xl p-4 text-sm font-bold">Tecnología</div></div></div></section>
+<section id="donaciones" class="bg-slate-950 text-white py-20 scroll-mt-20"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-yellow-300 text-xs font-extrabold uppercase tracking-widest">Acompañá el proyecto</p><h2 class="text-3xl sm:text-4xl font-black mt-3">Donaciones</h2><p class="text-slate-300 mt-4 max-w-3xl leading-relaxed">Tu colaboración puede acompañar becas, materiales, actividades, infraestructura, transporte y el sostenimiento general del club. Estamos preparando medios seguros para donaciones únicas y mensuales.</p><a href="https://wa.me/542236808522?text=Hola%2C%20quiero%20consultar%20c%C3%B3mo%20colaborar%20con%20Club%20Juntos." target="_blank" rel="noopener" class="inline-flex bg-yellow-400 text-slate-900 font-extrabold rounded-xl px-6 py-3 mt-7">Consultar cómo colaborar →</a><p class="text-xs mt-4 text-slate-400">Los medios de pago se publicarán cuando estén verificados.</p></div></section>
+<section id="familias" class="bg-white py-16 scroll-mt-20"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-blue-600 text-xs font-extrabold uppercase tracking-widest">Información útil</p><h2 class="text-3xl sm:text-4xl font-black mt-3">Un espacio para las familias</h2><p class="text-slate-600 mt-4 max-w-3xl">Consultá preguntas frecuentes, información institucional, recursos educativos y testimonios reales autorizados.</p><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8"><a href="#faq" class="cj-feature rounded-xl border border-slate-200 bg-slate-50 p-5 font-bold hover:text-blue-700">Preguntas frecuentes →</a><a href="#contacto" class="cj-feature rounded-xl border border-slate-200 bg-slate-50 p-5 font-bold hover:text-blue-700">Información y convivencia →</a><a href="#noticias" class="cj-feature rounded-xl border border-slate-200 bg-slate-50 p-5 font-bold hover:text-blue-700">Biblioteca educativa →</a><a href="#galeria" class="cj-feature rounded-xl border border-slate-200 bg-slate-50 p-5 font-bold hover:text-blue-700">Experiencias →</a></div></div></section>
+<section id="juntos-tv" class="bg-slate-900 text-white py-16 scroll-mt-20"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-yellow-300 text-xs font-extrabold uppercase tracking-widest">Contenidos audiovisuales</p><h2 class="text-3xl sm:text-4xl font-black mt-3">Club Juntos TV</h2><p class="text-slate-300 mt-4 max-w-3xl">Conocé entrevistas, experiencias y contenidos del club. Las clases en vivo para familias autorizadas tendrán un acceso privado cuando se implemente la solución segura.</p><a class="inline-flex mt-7 bg-white text-slate-900 font-bold px-6 py-3 rounded-xl" href="https://www.youtube.com/@clubjuntos" target="_blank" rel="noopener">Ir a nuestro canal →</a></div></section>
+<section id="contacto" class="bg-blue-50 py-16 scroll-mt-20"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-blue-700 text-xs font-extrabold uppercase tracking-widest">Contactanos</p><h2 class="text-3xl sm:text-4xl font-black mt-3">Estamos en Mar del Plata</h2><div class="mt-5 text-slate-700 space-y-2"><p><strong>Natatorio:</strong> Av. Paso 2430</p><p><strong>Oficina administrativa:</strong> 9 de Julio 3382</p></div><a href="https://wa.me/542236808522" target="_blank" rel="noopener" class="inline-flex mt-6 rounded-xl bg-blue-700 text-white font-bold px-6 py-3">Escribinos por WhatsApp →</a></div></section>
 
 <!-- ── FOOTER ─────────────────────────────── -->
 <footer class="bg-slate-950 border-t border-slate-800">
